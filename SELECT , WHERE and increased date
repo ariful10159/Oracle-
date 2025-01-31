@@ -1,0 +1,44 @@
+CREATE TABLE student (
+    std_id VARCHAR2(20),
+    std_name VARCHAR2(20),
+    city VARCHAR2(20),
+    phone VARCHAR2(15)
+);
+
+INSERT INTO student VALUES ('2102032', 'Ariful Islam', 'Cumilla', '01771306085');
+INSERT INTO student VALUES ('2102033', 'Asraful Islam', 'Cumilla', '01823139965');
+INSERT INTO student VALUES ('2102034', 'Asraful Islam', 'Cumilla', '01823139966');
+INSERT INTO student VALUES ('2102035', 'Asraful Islam', 'Cumilla', '01823139967');
+INSERT INTO student VALUES ('2102036', 'Asraful Islam', 'Cumilla', '01823139968');
+INSERT INTO student VALUES ('2102037', 'Asraful Islam', 'Cumilla', '01823139969');
+INSERT INTO student VALUES ('2102038', 'Asraful Islam', 'Cumilla', '01823139970');
+INSERT INTO student VALUES ('2102039', 'Asraful Islam', 'Cumilla', '01823139971');
+INSERT INTO student VALUES ('2102040', 'Asraful Islam', 'Cumilla', '01823139972');
+INSERT INTO student VALUES ('2102041', 'Asraful Islam', 'Cumilla', '01823139973');
+INSERT INTO student VALUES ('2102042', 'Asraful Islam', 'Cumilla', '01823139974');
+
+SELECT * FROM student;
+
+SELECT *FROM student where std_id> 2102032;
+
+SELECT city FROM student;
+
+SELECT DISTINCT city FROM student 
+
+ALTER TABLE student ADD INSTITUTE VARCHAR2(20);
+
+ALTER TABLE student DROP COLUMN INSTITUTE;
+
+ALTER TABLE student ADD ADDDATE DATE ;
+
+
+SELECT * FROM student;
+
+DESCRIBE student;
+
+INSERT INTO student (std_id, std_name, city, phone, ADDDATE)
+VALUES ('2102099', 'SAIFUL ISLAM', 'SAUDI', '01765466', TO_DATE('3-MAR-2012', 'DD-MON-YYYY'));
+
+SELECT std_id, ADDDATE, ADDDATE + 40 AS "Increased Date"
+FROM student
+WHERE std_id = '2102099';
